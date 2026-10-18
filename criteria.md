@@ -51,63 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+The classifier reaches at least **0.65 overall accuracy** on the held-out test set.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Three labels means a random guesser hits about 0.33. A target of 0.65 is roughly double that — enough to say the model learned something real rather than learning to guess the most common label. It’s ambitious without being delusional for a small fine-tuned model on ~200 examples.
 
 ---
 
-## 2.
+## 2. Per-label F1 — analysis
 
-<!-- Your criterion. -->
+The F1 score for the `analysis` label is at least **0.55** on the held-out test set.
 
-
-
-**Why this target:**
-
-
+**Why this target:** `analysis` is the hardest label to collect (genuine craft discussion is rarer on r/popheads than hype or gossip), the hardest to apply consistently (the line between citing a specific fact and just sounding specific is narrow), and the hardest to distinguish from `hot_take`. A lower floor than the other two labels is honest. I also expect `analysis` to be my smallest label by count, which means about 8 examples in the test split — a jumpy number that could move a lot between seeds, so 0.55 needs to hold across all three.
 
 ---
 
-## 3.
+## 3. Class balance
 
-<!-- Your criterion. -->
+No single label exceeds **65%** of the rows in `labels.csv`.
 
-
-
-**Why this target:**
-
-
+**Why this target:** The assignment’s hard cap is 70%. I’m targeting 65% to build in a buffer — if my collection drifts to 66%, I want to catch and fix it before hitting the cap where the model just learns to guess the dominant label. A model trained on a heavily skewed dataset isn’t learning three distinctions; it’s learning one.
 
 ---
 
-## 4.
+## 4. Per-label F1 — reaction
 
-<!-- Your criterion. -->
+The F1 score for the `reaction` label is at least **0.70** on the held-out test set.
 
-
-
-**Why this target:**
-
-
+**Why this target:** `reaction` has the most distinctive surface features of the three labels — event nouns (tour, collab, chart, #1), all-caps excitement, strings of exclamation marks. A model should find this pattern reliably from relatively few examples. Setting a higher floor here than for `analysis` reflects that the labels are genuinely unequal in difficulty. This target also needs to hold across all three seeds — if it hits 0.72, 0.68, 0.71, that’s a miss on seed 7.
 
 ---
 
-## 5.
+## 5. Macro F1
 
-<!-- Your criterion. -->
+The macro F1 across all three labels is at least **0.60** on the held-out test set.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Macro F1 averages across labels equally regardless of count — so a model that nails `reaction` and ignores `analysis` won’t pass this criterion even if its overall accuracy looks fine. It’s a check that the model learned all three distinctions rather than just the easiest one. 0.60 is the floor I’d need to call this classifier genuinely useful rather than a demo. Like criterion 1, this must hold across all three seeds.
 
 ---
 
