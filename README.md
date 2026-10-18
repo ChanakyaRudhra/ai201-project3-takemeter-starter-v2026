@@ -39,10 +39,12 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+TakeMeter classifies posts from r/popheads (a pop music discussion subreddit) into three categories based on how they engage with music: whether a post makes a specific, checkable claim about the music itself, offers a confident opinion with no support, or is a short in-the-moment reaction (often to non-musical news like chart movement or gossip rather than the music's craft). The community's own Jukebox review format - which asks for a score plus a written justification - makes this distinction unusually visible in the text, since justifications range from specific critique to pure restated enthusiasm.
 
-
+**Reading notes (Milestone 1):** Read threads across the Jukebox review format, Daily Discussion, Teatime gossip threads, and chart/news posts. Three candidate distinctions emerged from the actual text rather than from memory:
+1. Specific-claim posts (point to a vocal choice, a production decision, a lyric) vs. vibes-only posts (enthusiasm or complaint with no reference point).
+2. Music-craft posts vs. news/gossip-reaction posts (a large share of the sub's traffic is chart movement, tours, interviews, and Teatime gossip rather than discussion of the music's sound).
+3. Hedged/comparative claims (referencing a specific prior album or hedging the claim) vs. unqualified verdicts (flat assertions of quality with no reference point).
 
 ---
 
