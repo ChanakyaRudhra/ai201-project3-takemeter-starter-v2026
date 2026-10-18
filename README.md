@@ -56,33 +56,42 @@ TakeMeter classifies posts from r/popheads (a pop music discussion subreddit) in
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `analysis`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** Makes a claim about the music's craft backed by something specific and checkable — a lyric, a production choice, a vocal technique, or a named comparison to a prior work.
 
 **Example 1:**
->
+> Her vocal layering on the bridge mirrors the production on her 2021 single, but the mix pushes the bass higher this time — cleaner but less interesting.
 
 **Example 2:**
->
+> The hook recycles the same chord progression from their last single. Not necessarily bad, but it's not new ground for them.
+
+### `hot_take`
+
+**Definition:** States a confident verdict on the music's quality with no specific support offered — no lyric, no production detail, no named comparison.
+
+**Example 1:**
+> This is actually her best song ever and I will not be taking questions.
+
+**Example 2:**
+> Immaculate discography. Not a single bad song in the whole catalogue.
+
+### `reaction`
+
+**Definition:** A short response primarily triggered by an event — a chart position, a release announcement, a collab, gossip, an interview — even if a quality judgment is attached.
+
+**Example 1:**
+> WAIT SHE'S COLLABING WITH WHO?! I'm not okay
+
+**Example 2:**
+> NUMBER ONE???? LETS GOOOO so deserved!!
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `hot_take` and `reaction`
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+If the post names a specific event (a release, a chart move, an announcement, gossip) as its subject, it's `reaction`, regardless of any quality judgment attached — the event is what triggered the post, and the quality words are color. If the post is about the music's quality with no event triggering it, it's `hot_take`. When both are present in one sentence, the event wins: "she really snapped on this AND it hit #1" is `reaction` because the chart position is named.
 
 
 
